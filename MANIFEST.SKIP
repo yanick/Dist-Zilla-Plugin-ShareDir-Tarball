@@ -1,0 +1,7 @@
+^dist.ini
+^MANIFEST.SKIP
+Dist-Zilla-Plugin-ShareDir-Tarball.*
+^\.gitignore
+^\.git
+^\.build
+
