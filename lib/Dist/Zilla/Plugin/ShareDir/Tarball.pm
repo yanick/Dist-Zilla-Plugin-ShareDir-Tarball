@@ -74,12 +74,6 @@ sub munge_files {
         $self->zilla->prune_file($_);
     }
 
-    my $file = Dist::Zilla::File::InMemory->new(
-        name    => 'share/shared-files.tar.gz',
-        content => compress($archive->write),
-    );
-
-
     $self->add_file( Dist::Zilla::File::InMemory->new(
         name    => 'share/shared-files.tar.gz',
         content => compress($archive->write),
