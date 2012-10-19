@@ -2,6 +2,8 @@ Revision history for Dist-Zilla-Plugin-ShareDir-Tarball
 
 {{$NEXT}}
 
+    - Compression was done wrong. Ooops.
+
 0.1.0     2012-10-18
 
   - First version, unleashed on an unsuspecting world.
