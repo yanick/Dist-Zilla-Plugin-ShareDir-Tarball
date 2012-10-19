@@ -1,0 +1,47 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.68.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 66a78073d43de9a88db6f62eda3589ced3140fa2 AUTHOR_PLEDGE
+SHA1 d0e27f4a7f0165256dc0a75ee7758a2fff3624da Build.PL
+SHA1 e796c6bcd89c4d9eb5fd832c6e6b24caa4395356 Changes
+SHA1 505ec9d0ed865ab0d22ba522240823ff66e08278 INSTALL
+SHA1 42a9b278ca94a31df654fec186efe74ba9565d7e LICENSE
+SHA1 2736b96cef9ab83ca6896172c634fabedaaab260 MANIFEST
+SHA1 e9787c25011446c2123e9dda37e9909f5c2e9ac0 META.json
+SHA1 1a0941988ad90d4cc613b17fe99b9f75bb422a15 META.yml
+SHA1 b9ec5b3902c368d27222fe0ee02208c3c6e53cf9 README
+SHA1 5966bb9f077b2ad2d67653d471d2e5c4ba08aff9 README.mkdn
+SHA1 b18aea4a7a49d881bed340036cea9cf6888029a8 lib/Dist/Zilla/Plugin/ShareDir/Tarball.pm
+SHA1 3cbe905b92fbc69d59a06031d5ce6c837b352aa2 t/00-compile.t
+SHA1 473906254ecd96009795d4b7fbc82fac48c03ecd t/000-report-versions.t
+SHA1 35aca7bf1eadda643f6f6cfb237a7a09fa8d87b2 t/basic.t
+SHA1 9959ed6b17ba19e24e54cd748ebbcdeb80237fce t/corpus/Changes
+SHA1 59f3e41a48482f82fdbd6a1d0a90cbfe96b0621e t/corpus/DZT-Sample-1.0.tar.gz
+SHA1 d69f7efcea26378625831b9fc87712e61ec6eb20 t/corpus/DZT-Sample-1.0/Changes
+SHA1 a21bfc20a5b98d8d16e43f6192b27057789d0a70 t/corpus/DZT-Sample-1.0/dist.ini
+SHA1 a770e486c9add632d55d0fe7b9bd0afa6b93cf60 t/corpus/DZT-Sample-1.0/lib/DZT/Sample.pm
+SHA1 499e0d65911007f7435d636d3a7109e525b768be t/corpus/dist.ini
+SHA1 a770e486c9add632d55d0fe7b9bd0afa6b93cf60 t/corpus/lib/DZT/Sample.pm
+SHA1 e242ed3bffccdf271b7fbaf34ed72d089537b42f t/corpus/share/bar
+SHA1 f1d2d2f924e986ac86fdf7b36c94bcdf32beec15 t/corpus/share/foo
+SHA1 ec3f84bfd7a9ce3246e7592f4134100c6b5ce02b xt/release/unused-vars.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+iEYEARECAAYFAlCAm+4ACgkQ34Hwf+GwC4yq7wCfT0Z1izi/L+48xyNcQhidCmgk
+BaEAni2qmN2zHXrezRxGcrVYc6h6sS/H
+=dNEO
+-----END PGP SIGNATURE-----
