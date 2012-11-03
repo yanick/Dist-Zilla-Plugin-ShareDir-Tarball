@@ -1,11 +1,25 @@
 Revision history for Dist-Zilla-Plugin-ShareDir-Tarball
 
 {{$NEXT}}
+ [API CHANGES]
 
-0.2.0     2012-10-18
+ [BUG FIXES]
 
-    - Compression was done wrong. Ooops.
+ [DOCUMENTATION]
+ - Add mention to Module::Build::CleanInstall
 
-0.1.0     2012-10-18
+ [ENHANCEMENTS]
 
-  - First version, unleashed on an unsuspecting world.
+ [NEW FEATURES]
+
+ [STATISTICS]
+
+0.2.0 2012-10-18
+ - Compression was done wrong. Ooops.
+
+ [STATISTICS]
+ - code churn: 13 files changed, 173 insertions(+), 1 deletion(-)
+
+0.1.0 2012-10-18
+ - First version, unleashed on an unsuspecting world.
+

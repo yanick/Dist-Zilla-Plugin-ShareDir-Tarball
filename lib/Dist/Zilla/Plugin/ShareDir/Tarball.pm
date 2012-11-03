@@ -46,6 +46,13 @@ with them.  If there is no such files, the process is simply skipped.
 L<Dist::Zilla::Plugin::ShareDir>, which you want to use in tandem with this
 module.
 
+L<File::ShareDir::Tarball> - transparently extract the tarball behind the
+scene so that the shared directory can be accessed just like it is in
+L<File::ShareDir>.
+
+L<Module::Build::CleanInstall> - A subclass of L<Module::Build> which
+deinstall the files from previous installations via their I<packlist>.
+
 =cut
 
 use strict;
