@@ -5,14 +5,27 @@ use Test::More tests => 2;
 
 use Test::DZil;
 
-my $tzil = Builder->from_config(
-    { dist_root => 't/corpus' },
-);
+for my $corpus ( qw/ corpus corpus-dir / ) {
 
-$tzil->build;
+    subtest "with corpus $corpus" => sub {
+        plan tests => 4;
 
-my @shared = grep { $_->name =~ m#share/# } @{ $tzil->files };
+        my $tzil = Builder->from_config( { dist_root => "t/$corpus" },);
 
-is @shared => 1, "there is only one file";
+        $tzil->build;
 
-is $shared[0]->name => 'share/shared-files.tar.gz', "and it's the tarball";
+        my @shared = grep { $_->name =~ m#share/# } @{ $tzil->files };
+
+        is @shared => 1, "there is only one file";
+
+        is $shared[0]->name => 'share/shared-files.tar.gz', "and it's the tarball";
+
+        my $content = Compress::Zlib::memGunzip($shared[0]->content);
+        open my $fh, '<', \$content;
+
+        my $tar = Archive::Tar->new;
+        $tar->read($fh);
+
+        ok $tar->contains_file($_), "$_ present" for qw/ foo bar /;
+    }
+}

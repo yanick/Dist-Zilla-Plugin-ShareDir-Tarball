@@ -8,6 +8,7 @@ Revision history for Dist-Zilla-Plugin-ShareDir-Tarball
  [DOCUMENTATION]
 
  [ENHANCEMENTS]
+ - Add option 'dir' for custom source dir location. (RT83773)
 
  [NEW FEATURES]
 

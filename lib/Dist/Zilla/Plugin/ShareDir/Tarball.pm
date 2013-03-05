@@ -41,6 +41,13 @@ L<Dist::Zilla::Plugin::ShareDir::Tarball> which, upon the file munging stage, ga
 files in the I<share> directory and build the I<shared-files.tar.gz> archive
 with them.  If there is no such files, the process is simply skipped.
 
+=head1 OPTIONS
+
+=head2 dir
+
+The source directory to be bundled into the shared tarball. Defaults to
+C<share>.
+
 =head1 SEE ALSO
 
 L<Dist::Zilla::Plugin::ShareDir>, which you want to use in tandem with this
@@ -67,16 +74,23 @@ use Archive::Tar;
 with 'Dist::Zilla::Role::FileMunger';
 with 'Dist::Zilla::Role::FileInjector';
 
+has dir => (
+  is   => 'ro',
+  isa  => 'Str',
+  default => 'share',
+);
+
 sub munge_files {
     my( $self ) = @_;
 
-    my @shared = grep { $_->name =~ m#^share/# }  @{ $self->zilla->files }
+    my $src = $self->dir;
+    my @shared = grep { $_->name =~ m#^$src/# }  @{ $self->zilla->files }
         or return;
 
     my $archive = Archive::Tar->new;
 
     for ( @shared ) {
-        ( my $archive_name = $_->name ) =~ s#share/##;
+        ( my $archive_name = $_->name ) =~ s#$src/##;
         $archive->add_data( $archive_name => $_->content );
         $self->zilla->prune_file($_);
     }
