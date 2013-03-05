@@ -1,18 +1,11 @@
 Revision history for Dist-Zilla-Plugin-ShareDir-Tarball
 
-{{$NEXT}}
- [API CHANGES]
-
- [BUG FIXES]
-
- [DOCUMENTATION]
-
+0.3.0 2013-03-05
  [ENHANCEMENTS]
  - Add option 'dir' for custom source dir location. (RT83773)
 
- [NEW FEATURES]
-
  [STATISTICS]
+ - code churn: 13 files changed, 110 insertions(+), 11 deletions(-)
 
 0.2.1 2012-11-03
  [DOCUMENTATION]

@@ -1,5 +1,65 @@
 package Dist::Zilla::Plugin::ShareDir::Tarball;
+BEGIN {
+  $Dist::Zilla::Plugin::ShareDir::Tarball::AUTHORITY = 'cpan:YANICK';
+}
+{
+  $Dist::Zilla::Plugin::ShareDir::Tarball::VERSION = '0.3.0';
+}
 # ABSTRACT: Bundle your shared dir into a tarball
+
+
+use strict;
+use warnings;
+
+use Moose;
+
+use Dist::Zilla::File::InMemory;
+use Compress::Zlib;
+use Archive::Tar;
+
+with 'Dist::Zilla::Role::FileMunger';
+with 'Dist::Zilla::Role::FileInjector';
+
+has dir => (
+  is   => 'ro',
+  isa  => 'Str',
+  default => 'share',
+);
+
+sub munge_files {
+    my( $self ) = @_;
+
+    my $src = $self->dir;
+    my @shared = grep { $_->name =~ m#^$src/# }  @{ $self->zilla->files }
+        or return;
+
+    my $archive = Archive::Tar->new;
+
+    for ( @shared ) {
+        ( my $archive_name = $_->name ) =~ s#$src/##;
+        $archive->add_data( $archive_name => $_->content );
+        $self->zilla->prune_file($_);
+    }
+
+    $self->add_file( Dist::Zilla::File::InMemory->new(
+        name    => 'share/shared-files.tar.gz',
+        content => Compress::Zlib::memGzip($archive->write),
+    ));
+}
+
+1;
+
+__END__
+
+=pod
+
+=head1 NAME
+
+Dist::Zilla::Plugin::ShareDir::Tarball - Bundle your shared dir into a tarball
+
+=head1 VERSION
+
+version 0.3.0
 
 =head1 SYNOPSIS
 
@@ -60,45 +120,15 @@ L<File::ShareDir>.
 L<Module::Build::CleanInstall> - A subclass of L<Module::Build> which
 deinstall the files from previous installations via their I<packlist>.
 
+=head1 AUTHOR
+
+Yanick Champoux <yanick@babyl.dyndns.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2012 by Yanick Champoux.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 =cut
-
-use strict;
-use warnings;
-
-use Moose;
-
-use Dist::Zilla::File::InMemory;
-use Compress::Zlib;
-use Archive::Tar;
-
-with 'Dist::Zilla::Role::FileMunger';
-with 'Dist::Zilla::Role::FileInjector';
-
-has dir => (
-  is   => 'ro',
-  isa  => 'Str',
-  default => 'share',
-);
-
-sub munge_files {
-    my( $self ) = @_;
-
-    my $src = $self->dir;
-    my @shared = grep { $_->name =~ m#^$src/# }  @{ $self->zilla->files }
-        or return;
-
-    my $archive = Archive::Tar->new;
-
-    for ( @shared ) {
-        ( my $archive_name = $_->name ) =~ s#$src/##;
-        $archive->add_data( $archive_name => $_->content );
-        $self->zilla->prune_file($_);
-    }
-
-    $self->add_file( Dist::Zilla::File::InMemory->new(
-        name    => 'share/shared-files.tar.gz',
-        content => Compress::Zlib::memGzip($archive->write),
-    ));
-}
-
-1;

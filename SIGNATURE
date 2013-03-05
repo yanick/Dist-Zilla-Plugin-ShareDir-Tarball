@@ -1,0 +1,56 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.68.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 66a78073d43de9a88db6f62eda3589ced3140fa2 AUTHOR_PLEDGE
+SHA1 446f03864cbf1fd76d850a3052f54495b5e88028 Build.PL
+SHA1 216f6ae9eb5c4f073e27d4e3ce9d2fd26d99c324 Changes
+SHA1 505ec9d0ed865ab0d22ba522240823ff66e08278 INSTALL
+SHA1 42a9b278ca94a31df654fec186efe74ba9565d7e LICENSE
+SHA1 c561b689763f86e01e436c7773f5265752a3e609 MANIFEST
+SHA1 4653df1fbd33b9c99aed63d7a08ade9f7d00be95 META.json
+SHA1 f4890705ac112d9c4ac11b17a82d01ed3355ab09 META.yml
+SHA1 639812e9b3f023a3f14087feca0818ee75b16575 README
+SHA1 118699f045640e5d5d86c157df19f080d4b938c6 README.mkdn
+SHA1 1335188f1d097069bb18f81be9e7fa1aa1cfae6f lib/Dist/Zilla/Plugin/ShareDir/Tarball.pm
+SHA1 3cbe905b92fbc69d59a06031d5ce6c837b352aa2 t/00-compile.t
+SHA1 b3f9ea4a200966d72f947fe22ed4f606b1cc485f t/000-report-versions-tiny.t
+SHA1 53c557aa90c5dc44b28d364a25c05e156b9efc4c t/basic.t
+SHA1 9959ed6b17ba19e24e54cd748ebbcdeb80237fce t/corpus-dir/Changes
+SHA1 59f3e41a48482f82fdbd6a1d0a90cbfe96b0621e t/corpus-dir/DZT-Sample-1.0.tar.gz
+SHA1 d69f7efcea26378625831b9fc87712e61ec6eb20 t/corpus-dir/DZT-Sample-1.0/Changes
+SHA1 a21bfc20a5b98d8d16e43f6192b27057789d0a70 t/corpus-dir/DZT-Sample-1.0/dist.ini
+SHA1 a770e486c9add632d55d0fe7b9bd0afa6b93cf60 t/corpus-dir/DZT-Sample-1.0/lib/DZT/Sample.pm
+SHA1 e242ed3bffccdf271b7fbaf34ed72d089537b42f t/corpus-dir/custom/bar
+SHA1 f1d2d2f924e986ac86fdf7b36c94bcdf32beec15 t/corpus-dir/custom/foo
+SHA1 606236fd11c89abb7b1d8f7c6ad9c56efb31a8c3 t/corpus-dir/dist.ini
+SHA1 a770e486c9add632d55d0fe7b9bd0afa6b93cf60 t/corpus-dir/lib/DZT/Sample.pm
+SHA1 9959ed6b17ba19e24e54cd748ebbcdeb80237fce t/corpus/Changes
+SHA1 59f3e41a48482f82fdbd6a1d0a90cbfe96b0621e t/corpus/DZT-Sample-1.0.tar.gz
+SHA1 d69f7efcea26378625831b9fc87712e61ec6eb20 t/corpus/DZT-Sample-1.0/Changes
+SHA1 a21bfc20a5b98d8d16e43f6192b27057789d0a70 t/corpus/DZT-Sample-1.0/dist.ini
+SHA1 a770e486c9add632d55d0fe7b9bd0afa6b93cf60 t/corpus/DZT-Sample-1.0/lib/DZT/Sample.pm
+SHA1 499e0d65911007f7435d636d3a7109e525b768be t/corpus/dist.ini
+SHA1 a770e486c9add632d55d0fe7b9bd0afa6b93cf60 t/corpus/lib/DZT/Sample.pm
+SHA1 e242ed3bffccdf271b7fbaf34ed72d089537b42f t/corpus/share/bar
+SHA1 f1d2d2f924e986ac86fdf7b36c94bcdf32beec15 t/corpus/share/foo
+SHA1 ec3f84bfd7a9ce3246e7592f4134100c6b5ce02b xt/release/unused-vars.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+iEYEARECAAYFAlE2WE8ACgkQ34Hwf+GwC4x9zQCg11x49BUnPSbO+ieSfyqhTBTl
+Xw0AoL+8Q/FnJnEyIWBHvd9awFyQSfMM
+=3DE1
+-----END PGP SIGNATURE-----
