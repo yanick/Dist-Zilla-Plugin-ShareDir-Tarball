@@ -1,6 +1,8 @@
 Revision history for Dist-Zilla-Plugin-ShareDir-Tarball
 
 {{$NEXT}}
+
+0.3.0     2013-03-05
  [API CHANGES]
 
  [BUG FIXES]
