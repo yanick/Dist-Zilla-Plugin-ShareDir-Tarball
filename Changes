@@ -1,17 +1,8 @@
 Revision history for Dist-Zilla-Plugin-ShareDir-Tarball
 
-{{$NEXT}}
- [API CHANGES]
-
- [BUG FIXES]
-
- [DOCUMENTATION]
-
- [ENHANCEMENTS]
-
- [NEW FEATURES]
-
+0.3.1 2013-03-07
  [STATISTICS]
+ - code churn: 5 files changed, 58 insertions(+), 13 deletions(-)
 
 0.3.0 2013-03-05
  [ENHANCEMENTS]
