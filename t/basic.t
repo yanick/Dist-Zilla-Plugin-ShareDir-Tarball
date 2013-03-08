@@ -8,7 +8,7 @@ use Test::DZil;
 for my $corpus ( qw/ corpus corpus-dir / ) {
 
     subtest "with corpus $corpus" => sub {
-        plan tests => 4;
+        plan tests => 6;
 
         my $tzil = Builder->from_config( { dist_root => "t/$corpus" },);
 
@@ -27,5 +27,15 @@ for my $corpus ( qw/ corpus corpus-dir / ) {
         $tar->read($fh);
 
         ok $tar->contains_file($_), "$_ present" for qw/ foo bar /;
+
+        my ($makefile) = grep { $_->name =~ /Makefile.PL/ } @{$tzil->files};
+
+        ok $makefile, "Makefile.PL present";
+
+        like
+            $makefile->content,
+            qr/use File::ShareDir::Install;/,
+            "Makefile.PL has the sharedir directive" 
+        ;
     }
 }

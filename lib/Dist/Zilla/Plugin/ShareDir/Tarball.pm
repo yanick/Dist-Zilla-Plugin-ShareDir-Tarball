@@ -50,8 +50,8 @@ C<share>.
 
 =head1 SEE ALSO
 
-L<Dist::Zilla::Plugin::ShareDir>, which you want to use in tandem with this
-module.
+L<Dist::Zilla::Plugin::ShareDir>, which is similar to this module, but without
+the conversion of the shared directory into a tarball.
 
 L<File::ShareDir::Tarball> - transparently extract the tarball behind the
 scene so that the shared directory can be accessed just like it is in
@@ -71,34 +71,64 @@ use Dist::Zilla::File::InMemory;
 use Compress::Zlib;
 use Archive::Tar;
 
-with 'Dist::Zilla::Role::FileMunger';
-with 'Dist::Zilla::Role::FileInjector';
-
 has dir => (
   is   => 'ro',
   isa  => 'Str',
   default => 'share',
 );
 
+has archive => (
+    is => 'ro',
+    lazy => 1,
+    predicate => 'has_archive',
+    default => sub {
+        Archive::Tar->new;
+    },
+);
+
+has share_dir_map => (
+    is => 'ro',
+    lazy => 1,
+    default => sub {
+        my $self = shift;
+        return {} unless $self->has_archive;
+
+        return { dist => $self->dir };
+    },
+);
+
+sub compressed_archive { 
+    Compress::Zlib::memGzip($_[0]->archive->write) 
+}
+
+sub find_files {
+  my $self = shift;
+
+  my $dir = $self->dir . '/';
+  return grep { !index $_->name, $dir } @{ $self->zilla->files };
+}
+
+
 sub munge_files {
     my( $self ) = @_;
 
     my $src = $self->dir;
-    my @shared = grep { $_->name =~ m#^$src/# }  @{ $self->zilla->files }
-        or return;
-
-    my $archive = Archive::Tar->new;
+    my @shared = $self->find_files or return;
 
     for ( @shared ) {
         ( my $archive_name = $_->name ) =~ s#$src/##;
-        $archive->add_data( $archive_name => $_->content );
+        $self->archive->add_data( $archive_name => $_->content );
         $self->zilla->prune_file($_);
     }
 
     $self->add_file( Dist::Zilla::File::InMemory->new(
         name    => 'share/shared-files.tar.gz',
-        content => Compress::Zlib::memGzip($archive->write),
+        content => $self->compressed_archive,
     ));
 }
+
+with 'Dist::Zilla::Role::ShareDir',
+     'Dist::Zilla::Role::FileInjector',
+     'Dist::Zilla::Role::FileMunger';
 
 1;
