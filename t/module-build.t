@@ -1,11 +1,16 @@
 use strict;
 use warnings;
 
-use Test::More tests => 2;
+use Test::More;
 
 use Test::DZil;
 
-for my $corpus (qw/ corpus corpus-dir /) {
+plan skip_all => 'Dist::Zilla::Plugin::ModuleBuild not found'
+    unless eval "use Dist::Zilla::Plugin::ModuleBuild; 1";
+
+plan tests => 1;
+
+for my $corpus ( 'corpus-module-build' ) {
 
     subtest "with '$corpus'" => sub {
         plan tests => 6;
@@ -28,14 +33,14 @@ for my $corpus (qw/ corpus corpus-dir /) {
 
         ok $tar->contains_file($_), "$_ present" for qw/ foo bar /;
 
-        my ($makefile) = grep { $_->name =~ /Makefile.PL/ } @{$tzil->files};
+        my ($makefile) = grep { $_->name =~ /Build.PL/ } @{$tzil->files};
 
-        ok $makefile, "Makefile.PL present";
+        ok $makefile, "Build.PL present";
 
         like
             $makefile->content,
-            qr/use File::ShareDir::Install;/,
-            "Makefile.PL has the sharedir directive" 
+            qr/"share_dir"\s*=>\s*\{\s*"dist"\s*=>\s*"share"\s*\}/,
+            "Build.PL has the sharedir directive" 
         ;
     }
 }
