@@ -122,7 +122,7 @@ sub munge_files {
     }
 
     $self->add_file( Dist::Zilla::File::InMemory->new(
-        name    => 'share/shared-files.tar.gz',
+        name    => join( '/', $self->dir, 'shared-files.tar.gz'),
         content => $self->compressed_archive,
     ));
 }

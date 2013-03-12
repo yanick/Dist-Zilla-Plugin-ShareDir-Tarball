@@ -5,6 +5,8 @@ use Test::More tests => 2;
 
 use Test::DZil;
 
+my %share_dir = ( corpus => 'share', 'corpus-dir' => 'custom' );
+
 for my $corpus (qw/ corpus corpus-dir /) {
 
     subtest "with '$corpus'" => sub {
@@ -14,11 +16,11 @@ for my $corpus (qw/ corpus corpus-dir /) {
 
         $tzil->build;
 
-        my @shared = grep { $_->name =~ m#share/# } @{ $tzil->files };
+        my @shared = grep { $_->name =~ m#$share_dir{$corpus}/# } @{ $tzil->files };
 
         is @shared => 1, "there is only one file";
 
-        is $shared[0]->name => 'share/shared-files.tar.gz', "and it's the tarball";
+        is $shared[0]->name => $share_dir{$corpus}.'/shared-files.tar.gz', "and it's the tarball";
 
         my $content = Compress::Zlib::memGunzip($shared[0]->content);
         open my $fh, '<', \$content;

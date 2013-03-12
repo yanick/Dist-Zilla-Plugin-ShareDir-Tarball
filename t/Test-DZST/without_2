@@ -1,0 +1,50 @@
+[DZ] reading configuration using Dist::Zilla::MVP::Reader::Finder
+[GatherDir] online, Dist::Zilla::Plugin::GatherDir v4.300030
+[PruneCruft] online, Dist::Zilla::Plugin::PruneCruft v4.300030
+[ShareDir::Tarball] online, Dist::Zilla::Plugin::ShareDir::Tarball v0
+[MakeMaker] online, Dist::Zilla::Plugin::MakeMaker v4.300030
+[ModuleBuild] online, Dist::Zilla::Plugin::ModuleBuild v4.300030
+[DZ] beginning to build Test-DZST
+[GatherDir] adding file Test-DZST-0.01.tar.gz
+[GatherDir] adding file with
+[GatherDir] adding file Changes
+[GatherDir] adding file without_2
+[GatherDir] adding file without
+[GatherDir] adding file dist.ini
+[GatherDir] adding file t/template.t
+[GatherDir] adding file t/perlcriticrc
+[GatherDir] adding file t/0-use.t
+[GatherDir] adding file lib/Test/DZST.pm
+[GatherDir] adding file Test-DZST-0.01/Build.PL
+[GatherDir] adding file Test-DZST-0.01/with
+[GatherDir] adding file Test-DZST-0.01/Changes
+[GatherDir] adding file Test-DZST-0.01/Makefile.PL
+[GatherDir] adding file Test-DZST-0.01/without
+[GatherDir] adding file Test-DZST-0.01/dist.ini
+[GatherDir] adding file Test-DZST-0.01/t/template.t
+[GatherDir] adding file Test-DZST-0.01/t/perlcriticrc
+[GatherDir] adding file Test-DZST-0.01/t/0-use.t
+[GatherDir] adding file Test-DZST-0.01/lib/Test/DZST.pm
+[GatherDir] adding file Test-DZST-0.01/share/shared-files.tar.gz
+[GatherDir] adding file abc/xyz/dir1/foo.txt
+[PruneCruft] pruning Test-DZST-0.01.tar.gz
+[PruneCruft] pruning Test-DZST-0.01/Build.PL
+[PruneCruft] pruning Test-DZST-0.01/with
+[PruneCruft] pruning Test-DZST-0.01/Changes
+[PruneCruft] pruning Test-DZST-0.01/Makefile.PL
+[PruneCruft] pruning Test-DZST-0.01/without
+[PruneCruft] pruning Test-DZST-0.01/dist.ini
+[PruneCruft] pruning Test-DZST-0.01/t/template.t
+[PruneCruft] pruning Test-DZST-0.01/t/perlcriticrc
+[PruneCruft] pruning Test-DZST-0.01/t/0-use.t
+[PruneCruft] pruning Test-DZST-0.01/lib/Test/DZST.pm
+[PruneCruft] pruning Test-DZST-0.01/share/shared-files.tar.gz
+[ShareDir::Tarball] munge files
+[ShareDir::Tarball] adding file share/shared-files.tar.gz
+[DZ] guessing dist's main_module is lib/Test/DZST.pm
+[DZ] extracting distribution abstract from lib/Test/DZST.pm
+[MakeMaker] adding file Makefile.PL
+[ModuleBuild] adding file Build.PL
+[DZ] writing Test-DZST in Test-DZST-0.01
+[DZ] building archive with Archive::Tar::Wrapper
+[DZ] writing archive to Test-DZST-0.01.tar.gz
