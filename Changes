@@ -4,11 +4,14 @@ Revision history for Dist-Zilla-Plugin-ShareDir-Tarball
  [API CHANGES]
 
  [BUG FIXES]
+ - Use the right directory for the output shared dir.
 
  [DOCUMENTATION]
 
  [ENHANCEMENTS]
  - add tests w/ D::Z::P::ModuleBuild
+ - Move the generation of the archive in the GatherFiles phase
+    (instead of MungeFiles)
 
  [NEW FEATURES]
 

@@ -109,7 +109,7 @@ sub find_files {
 }
 
 
-sub munge_files {
+sub gather_files {
     my( $self ) = @_;
 
     my $src = $self->dir;
@@ -129,6 +129,6 @@ sub munge_files {
 
 with 'Dist::Zilla::Role::ShareDir',
      'Dist::Zilla::Role::FileInjector',
-     'Dist::Zilla::Role::FileMunger';
+     'Dist::Zilla::Role::FileGatherer';
 
 1;
