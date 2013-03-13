@@ -1,0 +1,82 @@
+{
+   "abstract" : "Bundle your shared dir into a tarball",
+   "author" : [
+      "Yanick Champoux <yanick@babyl.dyndns.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 4.300030, CPAN::Meta::Converter version 2.120921",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Dist-Zilla-Plugin-ShareDir-Tarball",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
+      },
+      "develop" : {
+         "requires" : {
+            "version" : "0.9901"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Archive::Tar" : "0",
+            "Compress::Zlib" : "0",
+            "Dist::Zilla::File::InMemory" : "0",
+            "Dist::Zilla::Role::FileGatherer" : "0",
+            "Dist::Zilla::Role::FileInjector" : "0",
+            "Dist::Zilla::Role::ShareDir" : "0",
+            "Moose" : "0",
+            "strict" : "0",
+            "warnings" : "0"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "6.30",
+            "File::Find" : "0",
+            "File::ShareDir::Install" : "0",
+            "File::Temp" : "0",
+            "Module::Build" : "0.3601",
+            "Test::DZil" : "0",
+            "Test::More" : "0.88"
+         }
+      }
+   },
+   "provides" : {
+      "Dist::Zilla::Plugin::ShareDir::Tarball" : {
+         "file" : "lib/Dist/Zilla/Plugin/ShareDir/Tarball.pm",
+         "version" : "v0.4.0"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "mailto" : "bug-dist-zilla-plugin-sharedir-tarball at rt.cpan.org",
+         "web" : "http://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-Plugin-ShareDir-Tarball"
+      },
+      "homepage" : "http://search.cpan.org/dist/Dist-Zilla-Plugin-ShareDir-Tarball/",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/yanick/Dist-Zilla-Plugin-ShareDir-Tarball.git",
+         "web" : "https://github.com/yanick/Dist-Zilla-Plugin-ShareDir-Tarball"
+      }
+   },
+   "version" : "0.4.0",
+   "x_author_pledge" : {
+      "version" : 1
+   },
+   "x_authority" : "cpan:YANICK"
+}
+
