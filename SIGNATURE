@@ -1,0 +1,70 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.68.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 66a78073d43de9a88db6f62eda3589ced3140fa2 AUTHOR_PLEDGE
+SHA1 e1c7244d410d929a34221f26bbd7e89121ce35aa Build.PL
+SHA1 551326b93ee767ea1aea5afda523c3ca77ccc932 Changes
+SHA1 505ec9d0ed865ab0d22ba522240823ff66e08278 INSTALL
+SHA1 42a9b278ca94a31df654fec186efe74ba9565d7e LICENSE
+SHA1 dcf96553db5dd09317daad29eff5f4861f40c820 MANIFEST
+SHA1 e42a3b30651927d0e2219ab2dbe2153b814cbc64 META.json
+SHA1 6c70bd64cd589d4855c9a4c6b6a4803ad3caeda2 META.yml
+SHA1 fc217950836755ea9076b61952d994c8e9f3c806 README
+SHA1 919fe848e30824d02479ad8769e828d93acb7b3a README.mkdn
+SHA1 a22c662216a0a23dd501b904f61da93e71cc60b1 lib/Dist/Zilla/Plugin/ShareDir/Tarball.pm
+SHA1 3cbe905b92fbc69d59a06031d5ce6c837b352aa2 t/00-compile.t
+SHA1 5df1759b31e30cb782b5a83b61fb7c3111a713bd t/000-report-versions-tiny.t
+SHA1 b2864b7c27eb9c03edf29318c875d931af04e7fd t/Test-DZST-2/Changes
+SHA1 da39a3ee5e6b4b0d3255bfef95601890afd80709 t/Test-DZST-2/abc/xyz/dir1/blank.txt
+SHA1 9d058710a53a69b014b746bdfa68889b1a2bbdbb t/Test-DZST-2/dist.ini
+SHA1 8b110853a4881be018078a1effff51adf8a3fcfb t/Test-DZST-2/lib/Test/DZST.pm
+SHA1 b2864b7c27eb9c03edf29318c875d931af04e7fd t/Test-DZST/Changes
+SHA1 9ba615680ae492362a33aebc776a03135e952e0a t/Test-DZST/abc/xyz/dir1/foo.txt
+SHA1 e1487a0d73328a29f6130fdfe03f01ef1764b9b8 t/Test-DZST/dist.ini
+SHA1 85fdd8aab0eac8e2c9bd394aa1992687f08d8057 t/Test-DZST/lib/Test/DZST.pm
+SHA1 096e9028c662a21e803d24967b0c58fd324d9d57 t/basic.t
+SHA1 9959ed6b17ba19e24e54cd748ebbcdeb80237fce t/corpus-dir/Changes
+SHA1 e242ed3bffccdf271b7fbaf34ed72d089537b42f t/corpus-dir/custom/bar
+SHA1 f1d2d2f924e986ac86fdf7b36c94bcdf32beec15 t/corpus-dir/custom/foo
+SHA1 d58f8ec03759f6473793c9370919c67cba0e7c2a t/corpus-dir/dist.ini
+SHA1 a770e486c9add632d55d0fe7b9bd0afa6b93cf60 t/corpus-dir/lib/DZT/Sample.pm
+SHA1 9959ed6b17ba19e24e54cd748ebbcdeb80237fce t/corpus-module-build/Changes
+SHA1 12d40c3844c9126dd681b391f5499a67612fb3fc t/corpus-module-build/DZT-Sample-1.0.tar.gz
+SHA1 76c10b200ffe4b982dccbaea9a7d109867904a21 t/corpus-module-build/DZT-Sample-1.0/Build.PL
+SHA1 9959ed6b17ba19e24e54cd748ebbcdeb80237fce t/corpus-module-build/DZT-Sample-1.0/Changes
+SHA1 38aec38d2c8b90e64eb33f338b0d2e8a83241447 t/corpus-module-build/DZT-Sample-1.0/dist.ini
+SHA1 a770e486c9add632d55d0fe7b9bd0afa6b93cf60 t/corpus-module-build/DZT-Sample-1.0/lib/DZT/Sample.pm
+SHA1 3e4a1ad50c80a1b0a62cb2bf21605f52e9121687 t/corpus-module-build/DZT-Sample-1.0/share/shared-files.tar.gz
+SHA1 38aec38d2c8b90e64eb33f338b0d2e8a83241447 t/corpus-module-build/dist.ini
+SHA1 a770e486c9add632d55d0fe7b9bd0afa6b93cf60 t/corpus-module-build/lib/DZT/Sample.pm
+SHA1 e242ed3bffccdf271b7fbaf34ed72d089537b42f t/corpus-module-build/share/bar
+SHA1 f1d2d2f924e986ac86fdf7b36c94bcdf32beec15 t/corpus-module-build/share/foo
+SHA1 9959ed6b17ba19e24e54cd748ebbcdeb80237fce t/corpus/Changes
+SHA1 99c2862ecad4396676f7675fe9de2de989af6468 t/corpus/dist.ini
+SHA1 a770e486c9add632d55d0fe7b9bd0afa6b93cf60 t/corpus/lib/DZT/Sample.pm
+SHA1 e242ed3bffccdf271b7fbaf34ed72d089537b42f t/corpus/share/bar
+SHA1 f1d2d2f924e986ac86fdf7b36c94bcdf32beec15 t/corpus/share/foo
+SHA1 fce9111b8137ab2782b97ff8261b8b13366bdb4b t/module-build.t
+SHA1 3375695d6ff181c1273baeebe4d55ef180a056ec t/pod-weaver-interaction.t
+SHA1 d4de238e4adf89f5fd7ad3faf45229f8cad6a18e t/test-dzst-2.t
+SHA1 ec3f84bfd7a9ce3246e7592f4134100c6b5ce02b xt/release/unused-vars.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+iEYEARECAAYFAlFCdq8ACgkQ34Hwf+GwC4zubwCeOpwArkFQuGjuydngQXPmPChI
++ngAoOzWGyC29jbCrm3Dpz2c2RtBVmc2
+=whGq
+-----END PGP SIGNATURE-----
