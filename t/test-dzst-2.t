@@ -1,9 +1,17 @@
 use strict;
 use warnings;
 
-use Test::More tests => 5;
-
+use Test::More;
 use Test::DZil;
+
+for my $plugin (qw/ Prepender DualBuilders MetaData::BuiltWith /) {
+    plan skip_all => "plugin '$plugin' required"
+        unless eval "use Dist::Zilla::Plugin::$plugin; 1";
+}
+
+
+plan tests => 5;
+
 
 my $corpus = 'Test-DZST-2';
 

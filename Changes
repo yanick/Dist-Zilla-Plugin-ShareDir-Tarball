@@ -11,7 +11,8 @@ Revision history for Dist-Zilla-Plugin-ShareDir-Tarball
  [ENHANCEMENTS]
  - add tests w/ D::Z::P::ModuleBuild
  - Move the generation of the archive in the GatherFiles phase
-    (instead of MungeFiles)
+    (instead of MungeFiles) (RT83777, thanks to Nathan Gary for
+    the troubleshooting help)
 
  [NEW FEATURES]
 
