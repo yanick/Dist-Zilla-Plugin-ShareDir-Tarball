@@ -45,4 +45,5 @@ t/corpus/share/foo
 t/module-build.t
 t/pod-weaver-interaction.t
 t/test-dzst-2.t
+xt/db-single.t
 xt/release/unused-vars.t
