@@ -1,27 +1,33 @@
 Revision history for Dist-Zilla-Plugin-ShareDir-Tarball
 
 {{$NEXT}}
-
-0.4.0     2013-03-14
  [API CHANGES]
 
  [BUG FIXES]
- - Use the right directory for the output shared dir.
+ - Remove PodWeaver from the basic test
 
  [DOCUMENTATION]
 
  [ENHANCEMENTS]
- - add tests w/ D::Z::P::ModuleBuild
- - Move the generation of the archive in the GatherFiles phase
-    (instead of MungeFiles) (RT83777, thanks to Nathan Gary for
-    the troubleshooting help)
 
  [NEW FEATURES]
 
  [STATISTICS]
 
-0.3.1 2013-03-07
+0.4.0 2013-03-14
+ [BUG FIXES]
+ - Use the right directory for the output shared dir.
 
+ [ENHANCEMENTS]
+ - add tests w/ D::Z::P::ModuleBuild
+ - Move the generation of the archive in the GatherFiles phase (instead of
+   MungeFiles) (RT83777, thanks to Nathan Gary for the troubleshooting
+   help)
+
+ [STATISTICS]
+ - code churn: 35 files changed, 336 insertions(+), 73 deletions(-)
+
+0.3.1 2013-03-07
  [STATISTICS]
  - code churn: 5 files changed, 58 insertions(+), 13 deletions(-)
 
@@ -41,6 +47,7 @@ Revision history for Dist-Zilla-Plugin-ShareDir-Tarball
 
 0.2.0 2012-10-18
  - Compression was done wrong. Ooops.
+
  [STATISTICS]
  - code churn: 13 files changed, 173 insertions(+), 1 deletion(-)
 
