@@ -124,6 +124,7 @@ sub gather_files {
     $self->add_file( Dist::Zilla::File::InMemory->new(
         name    => join( '/', $self->dir, 'shared-files.tar.gz'),
         content => $self->compressed_archive,
+        encoding => 'bytes',
     ));
 }
 

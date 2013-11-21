@@ -1,12 +1,10 @@
 Revision history for Dist-Zilla-Plugin-ShareDir-Tarball
 
 {{$NEXT}}
-
-0.4.1     2013-03-16
  [API CHANGES]
 
  [BUG FIXES]
- - Remove PodWeaver from the basic test
+ - Fix the encoding for Dzil 5.0+. (RT90536, bug report by Steven Haryanto)
 
  [DOCUMENTATION]
 
@@ -15,6 +13,13 @@ Revision history for Dist-Zilla-Plugin-ShareDir-Tarball
  [NEW FEATURES]
 
  [STATISTICS]
+
+0.4.1 2013-03-16
+ [BUG FIXES]
+ - Remove PodWeaver from the basic test
+
+ [STATISTICS]
+ - code churn: 4 files changed, 48 insertions(+), 7 deletions(-)
 
 0.4.0 2013-03-14
  [BUG FIXES]
