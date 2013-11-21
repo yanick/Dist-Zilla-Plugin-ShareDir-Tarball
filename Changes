@@ -1,18 +1,11 @@
 Revision history for Dist-Zilla-Plugin-ShareDir-Tarball
 
-{{$NEXT}}
- [API CHANGES]
-
+0.4.2 2013-11-20
  [BUG FIXES]
  - Fix the encoding for Dzil 5.0+. (RT90536, bug report by Steven Haryanto)
 
- [DOCUMENTATION]
-
- [ENHANCEMENTS]
-
- [NEW FEATURES]
-
  [STATISTICS]
+ - code churn: 5 files changed, 18 insertions(+), 2 deletions(-)
 
 0.4.1 2013-03-16
  [BUG FIXES]
