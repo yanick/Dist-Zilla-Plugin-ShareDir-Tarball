@@ -91,9 +91,20 @@ has share_dir_map => (
     lazy => 1,
     default => sub {
         my $self = shift;
-        return {} unless $self->has_archive;
 
-        return { dist => $self->dir };
+        return $self->has_archive ? { dist => $self->dir } : {};
+    },
+);
+
+has archive_dz_file => (
+    is => 'ro',
+    lazy => 1,
+    default => sub {
+        Dist::Zilla::File::InMemory->new(
+            content => 'placeholder',
+            encoding => 'bytes',
+            name    => join '/', $_[0]->dir, 'shared-files.tar.gz',
+        );
     },
 );
 
@@ -105,31 +116,42 @@ sub find_files {
   my $self = shift;
 
   my $dir = $self->dir . '/';
-  return grep { !index $_->name, $dir } @{ $self->zilla->files };
+  return grep { $_->name ne $self->archive_dz_file->name }
+         grep { !index $_->name, $dir }
+              @{ $self->zilla->files };
+}
+
+sub gather_files {
+    my $self = shift;
+    
+    $self->add_file( $self->archive_dz_file );
 }
 
 
-sub gather_files {
-    my( $self ) = @_;
+sub prune_files {
+    my $self = shift;
 
     my $src = $self->dir;
-    my @shared = $self->find_files or return;
 
-    for ( @shared ) {
+    for ( $self->find_files ) {
         ( my $archive_name = $_->name ) =~ s#$src/##;
         $self->archive->add_data( $archive_name => $_->content );
         $self->zilla->prune_file($_);
     }
 
-    $self->add_file( Dist::Zilla::File::InMemory->new(
-        name    => join( '/', $self->dir, 'shared-files.tar.gz'),
-        content => $self->compressed_archive,
-        encoding => 'bytes',
-    ));
 }
+
+sub munge_files {
+    my $self = shift;
+
+    $self->archive_dz_file->content( $self->compressed_archive );
+}
+
 
 with 'Dist::Zilla::Role::ShareDir',
      'Dist::Zilla::Role::FileInjector',
-     'Dist::Zilla::Role::FileGatherer';
+     'Dist::Zilla::Role::FileGatherer',
+     'Dist::Zilla::Role::FileMunger',
+     'Dist::Zilla::Role::FilePruner';
 
 1;

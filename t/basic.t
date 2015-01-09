@@ -16,7 +16,8 @@ for my $corpus (qw/ corpus corpus-dir /) {
 
         $tzil->build;
 
-        my @shared = grep { $_->name =~ m#$share_dir{$corpus}/# } @{ $tzil->files };
+        my @shared = grep { $_->name =~ m#$share_dir{$corpus}/# } @{ $tzil->files } 
+            or diag explain [ map { $_->name } @{ $tzil->files } ];
 
         is @shared => 1, "there is only one file";
 
