@@ -1,18 +1,11 @@
 Revision history for Dist-Zilla-Plugin-ShareDir-Tarball
 
-{{$NEXT}}
- [API CHANGES]
-
- [BUG FIXES]
-
- [DOCUMENTATION]
-
+0.5.0 2015-01-09
  [ENHANCEMENTS]
  - Move actions in right phases (encoding phase was causing issues).
 
- [NEW FEATURES]
-
  [STATISTICS]
+ - code churn: 4 files changed, 47 insertions(+), 15 deletions(-)
 
 0.4.2 2013-11-20
  [BUG FIXES]
