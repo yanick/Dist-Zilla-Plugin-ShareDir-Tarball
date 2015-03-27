@@ -135,7 +135,7 @@ sub prune_files {
 
     for ( $self->find_files ) {
         ( my $archive_name = $_->name ) =~ s#$src/##;
-        $self->archive->add_data( $archive_name => $_->content );
+        $self->archive->add_data( $archive_name => $_->encoded_content );
         $self->zilla->prune_file($_);
     }
 
