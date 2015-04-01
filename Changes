@@ -8,6 +8,8 @@ Revision history for Dist-Zilla-Plugin-ShareDir-Tarball
  [DOCUMENTATION]
 
  [ENHANCEMENTS]
+ - Use 'encoded_content' instead of 'content', which should
+    work around the encoding messes.
 
  [NEW FEATURES]
 
