@@ -1,19 +1,12 @@
 Revision history for Dist-Zilla-Plugin-ShareDir-Tarball
 
-{{$NEXT}}
- [API CHANGES]
-
- [BUG FIXES]
-
- [DOCUMENTATION]
-
+0.6.0 2015-04-01
  [ENHANCEMENTS]
- - Use 'encoded_content' instead of 'content', which should
-    work around the encoding messes.
-
- [NEW FEATURES]
+ - Use 'encoded_content' instead of 'content', which should work around the
+   encoding messes.
 
  [STATISTICS]
+ - code churn: 3 files changed, 11 insertions(+), 3 deletions(-)
 
 0.5.0 2015-01-09
  [ENHANCEMENTS]
